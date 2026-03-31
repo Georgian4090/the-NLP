@@ -14,74 +14,52 @@ To understand and implement fundamental text preprocessing techniques used in Na
 * Tokenize text
 * Remove stopwords
 
-##  Implementation
+## Example used
 
-### Step 1: Lowercasing
+### Input Text
 
-Converting all characters to lowercase to ensure uniformity.
-
-```python
-text_lower = text.lower()
+```text id="7y1n8d"
+Hello! How are you doing today? I'm doing GREAT!!!
 ```
 
 ---
 
-### 🔹 Step 2: Remove Punctuation
-
-Eliminate punctuation marks to avoid noise in tokens.
-
-```python
-import string
-text_no_punct = text_lower.translate(str.maketrans('', '', string.punctuation))
-```
-
----
-
-### 🔹 Step 3: Tokenization
-
-Split the text into individual words (tokens).
-
-```python
-from nltk.tokenize import word_tokenize
-tokens = word_tokenize(text_no_punct)
-```
-
----
-
-### 🔹 Step 4: Stopword Removal
-
-Remove commonly used words that do not add significant meaning.
-
-```python
-from nltk.corpus import stopwords
-
-stop_words = set(stopwords.words('english'))
-filtered_tokens = [word for word in tokens if word not in stop_words]
-```
-
----
-
-## Example Input
-
-```
-"Hello! This is a sample sentence, showing off the stopwords filtration."
-```
-
----
-
-##  Output
+## Deliverables
 
 ###  Cleaned Text
 
-```
-hello sample sentence showing stopwords filtration
+```text id="h7w3kx"
+hello doing today im doing great
 ```
 
-###  Tokenized Output
+---
 
+### Tokenized Output
+
+```text id="qk9v2p"
+['hello', 'doing', 'today', 'im', 'doing', 'great']
 ```
-['hello', 'sample', 'sentence', 'showing', 'stopwords', 'filtration']
-```
+
+---
+
+### Explanation of Steps
+
+**1. Lowercasing**
+All characters are converted to lowercase to ensure uniformity. This prevents the same word in different cases from being treated as different entities.
+
+**2. Removing Punctuation**
+Special characters such as `!`, `?`, and `'` are removed. This helps eliminate noise and ensures words are processed in a clean format.
+
+**3. Tokenization**
+The sentence is broken down into individual words. These tokens act as the basic units for further processing in NLP tasks.
+
+**4. Stopword Removal**
+Common words like “how”, “are”, and “you” are removed because they do not add significant meaning in most contexts. This step helps focus on more informative words.
+
+---
+
+
+
 
 ## Requirements
 
